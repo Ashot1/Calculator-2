@@ -1,0 +1,35 @@
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap'
+
+.Wrapper
+  width: 90%
+  height: 90%
+  background: rgba(255,255,255,0.1)
+  border-radius: 30px
+  padding: 15px
+  box-shadow: 0 0 20px rgba(0,0,0,0.14)
+  position: relative
+  display: flex
+  flex-direction: column
+  animation: DisplayEffect .7s ease-in-out
+
+.BottomMenu
+  display: flex
+  flex: 1
+
+@keyframes DisplayEffect
+  from
+    opacity: .8
+    scale: .7
+  to
+    opacity: 1
+    scale: 1
+
+.title
+  margin: 0
+  padding: 0
+  text-transform: uppercase
+  font-family: 'Montserrat', sans-serif
+  color: rgba(255,255,255,0.71)
+  transition: .4s
+  &:hover
+    text-shadow: 0 0 10px rgba(255,246,252,0.93)

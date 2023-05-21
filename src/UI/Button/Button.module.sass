@@ -1,0 +1,35 @@
+@import 'https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100&display=swap'
+
+.Button
+  display: grid
+  place-items: center
+  border-radius: 15px
+  border: none
+  font-size: 19px
+  font-family: 'Montserrat Alternates', sans-serif
+  font-weight: 600
+  box-shadow: 0 0 10px rgba(0,0,0,0.11)
+  transition: .4s
+  animation: CreateButton 1s ease-in-out
+  opacity: 0
+  animation-fill-mode: forwards
+  &:hover
+    scale: .9
+    transition: .4s
+
+  @media (max-width: 500px) and (min-width: 300px)
+    font-size: 20px
+
+@keyframes CreateButton
+  from
+    opacity: 0
+    transform: scale(.4)
+  to
+    opacity: 1
+    transform: scale(1)
+
+
+@for $i from 1 to 24
+  $time: 0.02 * $i
+  .Button:nth-child(#{$i})
+    animation-delay: #{$time}s

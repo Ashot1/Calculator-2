@@ -1,0 +1,16 @@
+.Keyboard
+  display: grid
+  grid-template-columns: repeat(4, 51px)
+  grid-column-gap: 5px
+  justify-content: center
+  width: 40%
+
+  @media (max-width: 1024px)
+    width: 50%
+
+  @media (max-width: 768px)
+    grid-template-columns: repeat(4, 60px)
+    width: 100%
+
+  @media (max-width: 300px)
+    grid-template-columns: repeat(4, 50px)

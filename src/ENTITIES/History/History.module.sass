@@ -1,0 +1,41 @@
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap'
+
+.List
+  list-style-type: none
+  padding: 0
+  margin: 0
+  width: 100%
+  overflow-y: auto
+  scrollbar-gutter: stable
+  height: percentage(0.8)
+  counter-reset: count var(--number)
+
+  &::-webkit-scrollbar
+    background-color: rgba(255,255,255,0.09)
+    border-radius: 5px
+
+  &::-webkit-scrollbar-thumb
+    background: linear-gradient(90.4deg, rgb(248, 52, 246) 0.6%, rgb(152, 38, 252) 90%)
+    opacity: .3
+    border-radius: 10px
+
+  & li
+    counter-increment: count -1
+    margin-left: 15px
+    padding-left: 10px
+    font-family: 'Montserrat', sans-serif
+    font-weight: 600
+    transition: .3s
+    min-height: 35px
+    display: flex
+    align-items: center
+    border-radius: 7px
+    word-wrap: break-word
+
+  & li:hover
+    background: rgba(255,246,252,0.11)
+
+  & li::before
+    content: counter(count) ' ⇒'
+    padding-right: 10px
+    min-width: 30px
