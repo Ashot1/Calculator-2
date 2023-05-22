@@ -4,13 +4,13 @@ import AppLayout from '../LAYOUTS/AppLayout/AppLayout'
 import Cursor from '../WIDGETS/Cursor/Cursor'
 
 const App: FC = () => {
-  return (
-    <AppLayout>
-        <>
-            <Cursor/>
-            <CalculatorPage/>
-        </>
-    </AppLayout>
+    return (
+        <AppLayout>
+            <>
+                <Cursor/>
+                <CalculatorPage/>
+            </>
+        </AppLayout>
   )
 }
 

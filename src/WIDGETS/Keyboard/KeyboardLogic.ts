@@ -1,8 +1,9 @@
 import { IKeyboard } from '../../INTERFACES/interfaces'
 
 export const AddClickFunction = ({ ops, onclick, Value, GetResult, but } : IKeyboard): () => void => {
-	const anotherOPS: string[] = ['*', '/']
-	const Condition = (!ops.includes(Value.slice(-1)) || Value.slice(-1) === ')') && Value !== '' && (!anotherOPS.includes(Value.slice(-1)))
+	const anotherOPS: string[] = ['*', '/'],
+		OPSIncludeCondition = (!ops.includes(Value.slice(-1)) || Value.slice(-1) === ')'),
+		Condition = OPSIncludeCondition && Value !== '' && (!anotherOPS.includes(Value.slice(-1)))
 	let click: () => void = () => onclick((prev: string) => prev + but)
 
 	const ChangeClick: (Value: string) => void= (Value) => {
@@ -55,10 +56,10 @@ export const AddClickFunction = ({ ops, onclick, Value, GetResult, but } : IKeyb
 		}
 	}
 	if (but === '√') {
-		if (!Condition) {
+		if (Value.slice(-1) === '√') {
 			ChangeClick('')
 		} else {
-			ChangeClick('**(1/2)')
+			ChangeClick('√')
 		}
 	}
 	return click

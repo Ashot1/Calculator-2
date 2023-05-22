@@ -3,6 +3,7 @@ import { IKeyboard } from '../../INTERFACES/interfaces'
 import CalculatorButton from '../../ENTITIES/CalculatorButton/CalculatorButton'
 import styles from './keyboard.module.sass'
 import { AddClickFunction } from './KeyboardLogic'
+import {motion} from 'framer-motion'
 
 const Keyboard: FC<IKeyboard> = memo(({ ops, onclick, Value, GetResult }) => {
 
@@ -17,7 +18,7 @@ const Keyboard: FC<IKeyboard> = memo(({ ops, onclick, Value, GetResult }) => {
 
 
 	return (
-		<div className={styles.Keyboard}>
+		<motion.div exit={{opacity: 0}} className={styles.Keyboard}>
 			{buttons.flat().map(but => {
 				const coloredButtons = ['=', 'C', '⌫']
 				const click = AddClickFunction({ops, onclick, Value, GetResult, but})
@@ -26,7 +27,7 @@ const Keyboard: FC<IKeyboard> = memo(({ ops, onclick, Value, GetResult }) => {
 				)
 			}
 			)}
-		</div>
+		</motion.div>
 	)
 })
 

@@ -4,7 +4,7 @@ const Calculate: (value: string) => string = (value) => {
 }
 
 export const GetResult: (value: string) => string = (value) => {
-	const negr: string[] = value.split(/(\(|\)|\+|\-|\*|\/)/)
+	const negr: string[] = value.split(/(\(|\)|\+|\-|\*|\/|\√)/)
 	const huy: any = negr.map((inp) => {
 		return parseFloat(inp)
 	})
@@ -12,6 +12,15 @@ export const GetResult: (value: string) => string = (value) => {
 		if (!huy[i]) huy[i] = negr[i]
 	}
 	for (let i = 0; i < huy.length; i++) {
+		if (huy[i] === '√') {
+			huy.splice(i + 1, 0, '(')
+			huy.splice(i + 3, 0, ')')
+			huy.splice(i + 4, 0, '**(1/2)')
+			huy[i] = ''
+			if(typeof huy[i - 1] == 'number'){
+				huy[i] = '*'
+			}
+		}
 		if ((huy[i] === '(' && typeof huy[i - 1] == 'number') || (huy[i] === '(' && huy[i - 2] === ')')) {
 			huy.splice(i, 0, '*');
 		}

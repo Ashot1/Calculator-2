@@ -23,10 +23,10 @@
 
 .backgroundItem
     width: 250px
-    filter: blur(15px)
+    filter: blur(20px)
     height: 250px
     border-radius: 50%
-    background: linear-gradient(to bottom right, #8e2de2, #4a00e0)
+    background: linear-gradient(to top left, rgb(64, 84, 178), rgb(219, 2, 234))
     display: block
     box-shadow: 0 0 100px #4a00e0
     position: absolute
@@ -41,6 +41,6 @@
         @include inline-animation(1.5s, 500px, 0)
 
     &:nth-child(3)
-        left: 20%
-        top: 70%
+        left: 10%
+        top: 80%
         @include inline-animation(2s, 0, 500px)

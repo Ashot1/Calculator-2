@@ -33,11 +33,11 @@ const Calculator: FC = () => {
 	return (
 		<div className={styles.Wrapper}>
 			<div style={{width: '100%', display: 'grid', placeItems: 'center'}}>
-				<h2 className={styles.title} onClick={() => setOpenedHistory(!OpenedHistory)}>V-Calculator</h2>
+				<h2 className={styles.title} onClick={() => setOpenedHistory(!OpenedHistory)}>V-Calculator 2</h2>
 			</div>
 			<CalculatorDisplay setValue={(e) => setValue((e.target as HTMLInputElement)?.value)} Value={Value} Result={Result} setOpenedHistory={OpenCloseHistory} GetResult={Res}/>
 			<div className={styles.BottomMenu}>
-				<AnimatePresence>
+				<AnimatePresence mode="wait">
 					{(OpenedHistory || !matchQuery) && <HistoryList key="HistoryList" History={History} setHistory={setHistory} setValue={setValue}/>}
 					{(!OpenedHistory || !matchQuery) && <Keyboard ops={ops} onclick={setValue} Value={Value} GetResult={Res} key="Keyboard"/>}
 				</AnimatePresence>
