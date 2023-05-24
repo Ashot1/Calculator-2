@@ -24,16 +24,23 @@ export interface IKeyboard {
 	onclick: (e: ((val: string) => string) | string) => void,
 	Value: string,
 	GetResult: () => void,
-	but?: string
+	but?: string,
+	lang?: string
+}
+
+export interface IHistoryList {
+	History: string[],
+	setHistory: (Array: any[]) => void,
+	setValue: (item: string) => void,
+	lang: string
 }
 
 export interface IButton {
 	color: string,
 	bg: string,
-	children: string,
+	children: string | JSX.Element | string[] | JSX.Element[],
 	onclick: () => void,
-	height: string,
-	dopClass: string
+	dopClass?: string
 }
 
 export interface ICalcButton {
@@ -46,3 +53,17 @@ export interface ICalcButton {
 export interface CustomCSS extends CSSProperties {
 	'--number'?: string
 }
+
+export interface IHeaderButton{
+	children: any,
+	onclick: () => void,
+	dopClass?: string
+}
+
+export interface ICursor{
+	x1: number,
+	y1: number,
+	x2: number,
+	y2: number,
+	Display: string,
+	Position: string }

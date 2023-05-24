@@ -4,7 +4,7 @@ export const manifestForPlugin: Partial<VitePWAOptions> = {
 	registerType: 'autoUpdate',
 	includeAssets: ["favicon.ico", "apple-touch-icon"],
 	devOptions: {
-		enabled: true
+		enabled: false
 	},
 	manifest: {
 		'short_name': 'V-Calculator',

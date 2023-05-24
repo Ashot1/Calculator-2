@@ -1,4 +1,4 @@
-import { IKeyboard } from '../../INTERFACES/interfaces'
+import { IKeyboard } from '../../interfaces'
 
 export const AddClickFunction = ({ ops, onclick, Value, GetResult, but } : IKeyboard): () => void => {
 	const anotherOPS: string[] = ['*', '/'],
@@ -16,6 +16,14 @@ export const AddClickFunction = ({ ops, onclick, Value, GetResult, but } : IKeyb
 
 	if (but === ')') {
 		if (Condition || Value.slice(-1) === ')') {
+			ChangeClick(but)
+		} else {
+			ChangeClick('')
+		}
+	}
+
+	if (but === '-') {
+		if (Condition || Value.slice(-1) === '(') {
 			ChangeClick(but)
 		} else {
 			ChangeClick('')

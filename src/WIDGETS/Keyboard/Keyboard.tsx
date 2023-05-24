@@ -1,5 +1,5 @@
 import { FC, memo } from 'react'
-import { IKeyboard } from '../../INTERFACES/interfaces'
+import { IKeyboard } from '../../interfaces'
 import CalculatorButton from '../../ENTITIES/CalculatorButton/CalculatorButton'
 import styles from './keyboard.module.sass'
 import { AddClickFunction } from './KeyboardLogic'

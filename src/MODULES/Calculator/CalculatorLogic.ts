@@ -1,6 +1,6 @@
 
 const Calculate: (value: string) => string = (value) => {
-	return (new Function('return (' + value + ')')());
+	return (new Function(`return (${value})`)());
 }
 
 export const GetResult: (value: string) => string = (value) => {
@@ -9,18 +9,18 @@ export const GetResult: (value: string) => string = (value) => {
 		return parseFloat(inp)
 	})
 	for (let i = 0; i < huy.length; i++) {
-		if (!huy[i]) huy[i] = negr[i]
+		if (!huy.at(i)) huy[i] = negr[i]
 	}
 	for (let i = 0; i < huy.length; i++) {
-		if (huy[i] === '√') {
-			if(huy[i + 1] === '(' || huy[i + 2] === '('){
-				let Count = 0
+		if (huy.at(i) === '√') {
+			if(huy.at(i + 1) === '(' || huy.at(i + 2) === '('){
+				let BracketsCount = 0
 				for(let g = 0; g < huy.length - i; g++) {
-					if(huy[i + g] === '(') Count = Count + 1
-					console.log(Count)
-					if(huy[i + g] === ')'){
-						Count = Count - 1
-						if(!Count) {
+					if(huy.at(i + g) === '(') BracketsCount = BracketsCount + 1
+
+					if(huy.at(i + g) === ')'){
+						BracketsCount = BracketsCount - 1
+						if(!BracketsCount) {
 							huy.splice(i + g + 1, 0, '**(1/2)')
 							break
 						}
@@ -32,18 +32,17 @@ export const GetResult: (value: string) => string = (value) => {
 				huy.splice(i + 3, 0, ')')
 				huy.splice(i + 4, 0, '**(1/2)')
 			}
-			console.log(huy)
 
 			huy[i] = ''
-			if(typeof huy[i - 1] == 'number'){
+			if(typeof huy.at(i - 1) == 'number'){
 				huy[i] = '*'
 			}
 		}
 
-		if ((huy[i] === '(' && typeof huy[i - 1] == 'number') || (huy[i] === '(' && huy[i - 2] === ')')) {
+		if ((huy.at(i) === '(' && typeof huy.at(i - 1) == 'number') || (huy.at(i) === '(' && huy.at(i - 2) === ')')) {
 			huy.splice(i, 0, '*');
 		}
-		if (huy[i] === ')' && typeof huy[i + 1] == 'number') {
+		if (huy.at(i) === ')' && typeof huy.at(i + 1) == 'number') {
 			huy.splice(i + 1, 0, '*');
 		}
 	}
@@ -51,7 +50,12 @@ export const GetResult: (value: string) => string = (value) => {
 
 	try {
 		return Calculate(huy.join('')).toString()
-	} catch (e) {
+	} catch (e: unknown) {
+		if (e instanceof Error) {
+			console.error(e.message);
+		} else {
+			console.error('Неизвестная ошибка');
+		}
 		return 'Error'
 	}
 }

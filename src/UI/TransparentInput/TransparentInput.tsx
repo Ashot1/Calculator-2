@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { IDisplay } from '../../INTERFACES/interfaces'
+import { IDisplay } from '../../interfaces'
 import styles from './TransparentInput.module.sass'
 
 const TransparentInput: FC<IDisplay> = ({placeholder, FZ, setValue, Value}) => {

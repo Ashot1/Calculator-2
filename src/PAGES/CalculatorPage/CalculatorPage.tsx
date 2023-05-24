@@ -5,8 +5,6 @@ import { FC } from 'react'
 const CalculatorPage: FC = () => {
 	return (
 		<Calculator/>
-		// <MainLayout>
-		// </MainLayout>
 	)
 }
 

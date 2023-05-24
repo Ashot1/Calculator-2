@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { ILayout } from '../../INTERFACES/interfaces'
+import { ILayout } from '../../interfaces'
 import styles from './main.module.sass'
 
 const MainLayout: FC<ILayout> = ({children}) => {

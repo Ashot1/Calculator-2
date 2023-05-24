@@ -1,10 +1,10 @@
 import styles from './ClearHistoryButton.module.sass'
 import { FC } from 'react'
 
-const ClearHistoryButton: FC<{Clear: () => void}> = ({Clear}) => {
+const ClearHistoryButton: FC<{Clear: () => void, text: string}> = ({Clear, text}) => {
 	return (
 		<div className={styles.buttonPos}>
-			<button onClick={Clear}>Очистить историю</button>
+			<button onClick={Clear}>{text}</button>
 		</div>
 	)
 }

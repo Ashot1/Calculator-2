@@ -3,12 +3,9 @@
 .Button
   display: grid
   place-items: center
-  border-radius: 15px
   border: none
-  font-size: 19px
   font-family: 'Montserrat Alternates', sans-serif
   font-weight: 600
-  box-shadow: 0 0 10px rgba(0,0,0,0.11)
   transition: .4s
   animation: CreateButton 1s ease-in-out
   opacity: 0
@@ -16,6 +13,7 @@
   &:hover
     scale: .9
     transition: .4s
+    cursor: pointer
 
   @media (max-width: 500px) and (min-width: 300px)
     font-size: 20px

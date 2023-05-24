@@ -1,0 +1,27 @@
+@import 'https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap'
+
+.linkBtn
+  text-decoration: none
+  color: white
+  display: grid
+  place-items: center
+  font-family: 'Source Code Pro', monospace
+  font-weight: 600
+  transition: .4s
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    border-bottom: 1px solid white
+    transition: .4s
+    transform: scaleX(0)
+
+  &:hover
+    transition: .4s
+    &::before
+      transform: scaleX(1)
+

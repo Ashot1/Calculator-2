@@ -2,7 +2,7 @@ import { FC } from 'react'
 import TransparentInput from '../../UI/TransparentInput/TransparentInput'
 import styles from './calculatorDisplay.module.sass'
 import FastResult from '../../ENTITIES/FastResult/FastResult'
-import { ICalculatorDisplay } from '../../INTERFACES/interfaces'
+import { ICalculatorDisplay } from '../../interfaces'
 
 const CalculatorDisplay: FC<ICalculatorDisplay> = ({setValue, Value, Result, setOpenedHistory, GetResult}) => {
 	const MatchQuery300: boolean = window.matchMedia("(max-width: 300px)").matches,

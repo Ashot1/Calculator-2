@@ -14,8 +14,11 @@
     padding: 0
     margin: 0
     font-family: 'Ysabeau', sans-serif
-    animation: TextWriteAnim 1s steps(7)
+    animation: TextWriteAnim 1s steps(8)
     overflow: hidden
+    width: 0
+    animation-delay: .6s
+    animation-fill-mode: forwards
 
   @media (max-width: 1024px)
     width: 50%
@@ -31,4 +34,4 @@
   from
     width: 0ch
   to
-    width: 6ch
+    width: var(--width)

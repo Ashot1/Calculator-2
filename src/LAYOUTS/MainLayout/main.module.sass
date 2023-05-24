@@ -1,10 +1,19 @@
 .Main
     z-index: 2
     display: grid
-    border-radius: 20px
-    animation: RotateWrapperBackground 1s ease infinite
     place-items: center
-    width: auto
-    height: auto
+    width: 100vw
+    height: 95vh
+    margin-top: 5vh
+    overflow-y: scroll
+    position: relative
+    &::-webkit-scrollbar
+        background-color: rgba(255,255,255,0.09)
+        border-radius: 5px
+
+    &::-webkit-scrollbar-thumb
+        background: linear-gradient(90.4deg, rgb(248, 52, 246) 0.6%, rgb(152, 38, 252) 90%)
+        opacity: .3
+        border-radius: 10px
 
 

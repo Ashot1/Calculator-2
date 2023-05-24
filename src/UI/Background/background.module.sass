@@ -32,8 +32,11 @@
     position: absolute
 
     &:nth-child(1)
-        left: 10%
+        top: 10%
+        left: 2%
         @include inline-animation(1s, -500px, 0)
+        @media (max-width: 500px)
+            left: -25%
 
     &:nth-child(2)
         left: 70%

@@ -1,9 +1,16 @@
-import styles from './Cursor.module.sass'
 import { FC, useEffect, useState } from 'react'
+import CursorAppearance from '../../UI/CursorAppearance/CursorAppearance'
 
 const Cursor: FC = () => {
 	const [Pos, setPos] = useState<number[]>([]),
-		TouchDisplay: boolean | number = "ontouchstart" in window || navigator.maxTouchPoints
+		TouchDisplay: boolean | number = "ontouchstart" in window || navigator.maxTouchPoints,
+		cursorData = localStorage.getItem("cursor"),
+		[Cursor, setCursor] = useState<string>(cursorData || "dot")
+
+	useEffect(() => {
+		const cursorData = localStorage.getItem("cursor")
+		if(cursorData) setCursor(cursorData)
+	}, [cursorData])
 
 	useEffect(() => {
 		const MouseMove: (e: MouseEvent) => void = (e) => {
@@ -19,10 +26,7 @@ const Cursor: FC = () => {
 	}, [TouchDisplay])
 
 	return (
-		<>
-			<article style={{ translate: `${Pos[0]}px ${Pos[1]}px`, display: TouchDisplay ? 'none' : 'block' }} className={styles.CenterDot}></article>
-			<article style={{ translate: `${Pos[0]}px ${Pos[1]}px`,  display: TouchDisplay ? 'none' : 'block' }} className={styles.Dot}></article>
-		</>
+		<CursorAppearance x1={Pos[0]} y1={Pos[1]} x2={Pos[0]} y2={Pos[1]} Display={!TouchDisplay && Cursor === "dot" ? 'block' : 'none' } Position="absolute"/>
 	)
 }
 

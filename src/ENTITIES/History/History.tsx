@@ -1,6 +1,6 @@
 import styles from './History.module.sass'
 import { FC } from 'react'
-import { CustomCSS } from '../../INTERFACES/interfaces'
+import { CustomCSS } from '../../interfaces'
 
 const HistoryUL: FC<{Hist: string[], onclick: (item: string) => void}> = ({Hist, onclick}) => {
 	const SetProperty: CustomCSS = {'--number': `${Hist.length + 1}`}
