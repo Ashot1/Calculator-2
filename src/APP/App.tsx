@@ -3,7 +3,7 @@ import { FC, useEffect } from 'react'
 import AppLayout from '../LAYOUTS/AppLayout/AppLayout'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import NotFoundedPage from '../PAGES/NotFoundedPage/NotFoundedPage'
-import ConverterPage from '../PAGES/ConverterPage/ConverterPage'
+// import ConverterPage from '../PAGES/ConverterPage/ConverterPage'
 
 const router = createBrowserRouter([
     {
