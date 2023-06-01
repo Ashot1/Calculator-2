@@ -1,10 +1,9 @@
 import styles from './ConverterFavoriteList.module.sass'
-import { FC, memo, useState } from 'react'
+import { FC, memo } from 'react'
 import { ConverterBasicListText } from '../../Localisation.ts'
 import ConverterList from '../../ENTITIES/ConverterList/ConverterList.tsx'
 import { CustomCSS, ValuteType } from '../../interfaces.ts'
 import FavoriteListContent from '../../WIDGETS/FavoriteListContent/FavoriteListContent.tsx'
-import LoadingListItem from '../../ENTITIES/LoadingListItem/LoadingListItem.tsx'
 
 const ConverterFavoriteList: FC<{lang: string, Valute: ValuteType, setFavList: (arg: string) => void, FavList: string}> = ({lang, Valute, FavList, setFavList}) => {
 

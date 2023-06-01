@@ -1,4 +1,4 @@
-import { FC, memo } from 'react'
+import { FC } from 'react'
 import { IKeyboard } from '../../interfaces'
 import CalculatorButton from '../../ENTITIES/CalculatorButton/CalculatorButton'
 import styles from './keyboard.module.sass'

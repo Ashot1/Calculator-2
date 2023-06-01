@@ -1,5 +1,5 @@
 import styles from './HistoryList.module.sass'
-import { CSSProperties, FC, memo, MutableRefObject, useCallback, useMemo } from 'react'
+import { CSSProperties, FC, memo, useCallback, useMemo } from 'react'
 import HistoryUL from '../../ENTITIES/History/History'
 import ClearHistoryButton from '../../ENTITIES/ClearHistoryButton/ClearHistoryButton'
 import {motion} from 'framer-motion'
