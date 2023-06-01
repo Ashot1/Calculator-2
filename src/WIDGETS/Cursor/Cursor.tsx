@@ -1,11 +1,14 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useContext, useEffect, useState } from 'react'
 import CursorAppearance from '../../UI/CursorAppearance/CursorAppearance'
+import styles from './Cursor.module.sass'
+import { MobileContext } from '../../PROVIDERS/MobileContext.tsx'
 
 const Cursor: FC = () => {
 	const [Pos, setPos] = useState<number[]>([]),
-		TouchDisplay: boolean | number = "ontouchstart" in window || navigator.maxTouchPoints,
+		{ TouchDisplay } = useContext(MobileContext),
 		cursorData = localStorage.getItem("cursor"),
-		[Cursor, setCursor] = useState<string>(cursorData || "dot")
+		[Cursor, setCursor] = useState<string>(cursorData || "dot"),
+		[DopClass, setDopClass] = useState<string>()
 
 	useEffect(() => {
 		const cursorData = localStorage.getItem("cursor")
@@ -14,19 +17,24 @@ const Cursor: FC = () => {
 
 	useEffect(() => {
 		const MouseMove: (e: MouseEvent) => void = (e) => {
-			const x: number = e.clientX,
-				y: number = e.clientY
-			setPos([x, y])
+			if(!TouchDisplay && Cursor === 'dot'){
+				const x: number = e.clientX,
+					y: number = e.clientY
+				setPos([x, y])
+				if(e.target && (e.target as HTMLElement).closest('button')){
+					setDopClass(styles.active)
+				} else {
+					setDopClass('')
+				}
+			}
 		}
-		if(!TouchDisplay){
-			document.addEventListener('mousemove', MouseMove)
-		} else {
-			document.removeEventListener('mousemove', MouseMove)
-		}
-	}, [TouchDisplay])
+		document.addEventListener('mousemove', MouseMove)
+
+		return () => document.removeEventListener('mousemove', MouseMove)
+	}, [])
 
 	return (
-		<CursorAppearance x1={Pos[0]} y1={Pos[1]} x2={Pos[0]} y2={Pos[1]} Display={!TouchDisplay && Cursor === "dot" ? 'block' : 'none' } Position="absolute"/>
+		<CursorAppearance x1={Pos[0]} y1={Pos[1]} x2={Pos[0]} y2={Pos[1]} Display={!TouchDisplay && Cursor === "dot" ? 'block' : 'none' } Position="absolute" DopClass={DopClass}/>
 	)
 }
 

@@ -1,0 +1,76 @@
+.FavoriteItem
+  background: rgba(255, 255, 255, 0.1)
+  opacity: 0
+  animation: CreateListItem 1s ease-out
+  animation-delay: 1s
+  animation-fill-mode: forwards
+  &:hover
+    box-shadow: 0 0 15px rgba(0,0,0,0.35)
+    transition: .4s
+
+@keyframes CreateListItem
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+.Course
+  display: flex
+  margin-top: 15px
+
+.NewData
+  margin-top: 1rem
+  margin-bottom: 1rem
+  font-size: 25px
+  line-height: 2.5rem
+  font-weight: 700
+  font-family: 'Quicksand', sans-serif
+  @media (max-width: 500px)
+    font-size: 20px
+
+.pastData
+  font-family: 'Quicksand', sans-serif
+  font-size: 20px
+  line-height: 2.5rem
+  font-weight: 700
+  margin-top: 1rem
+  margin-bottom: 1rem
+  color: rgba(255,255,255,0.34)
+  @media (max-width: 500px)
+    font-size: 15px
+  & b
+    margin-left: 20px
+    margin-right: 10px
+    user-select: none
+    filter: invert(100%)
+    & img
+      width: 20px
+      height: 20px
+      margin-bottom: -3px
+      opacity: .5
+      @media (max-width: 500px)
+        margin-bottom: -5px
+
+.ValuteInfo
+  display: flex
+  font-family: 'Kanit', sans-serif
+  gap: 25px
+  & h3
+    padding: 0
+    margin: 0 0 5px 0
+    font-size: 20px
+    color: rgba(255,255,255,0.85)
+  & h6
+    padding: 0
+    margin: 0
+    font-size: 12px
+    position: absolute
+    color: rgba(255,255,255,0.53)
+
+.percent
+  font-weight: 600
+  display: flex
+  color: rgba(255,255,255,0.73)
+  & svg
+    margin-top: 2px
+

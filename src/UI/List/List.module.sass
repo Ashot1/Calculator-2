@@ -1,0 +1,12 @@
+.List
+  list-style-type: none
+  padding: 0 0 150px 0
+  margin: 0
+  gap: 15px
+  display: grid
+  grid-template-columns: repeat(auto-fit, 350px)
+  justify-content: center
+  @media (max-width: 500px)
+    grid-template-columns: repeat(auto-fit, 90%)
+  @media (max-width: 320px)
+    grid-template-columns: repeat(auto-fit, 95%)

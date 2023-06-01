@@ -9,7 +9,7 @@ const HeaderLinks: FC<{ lang: string }> = ({ lang }) => {
 	return (
 		<nav className={styles.links}>
 			<HeaderLink link={`/${lang}/calculator`}>{text.LinkCalc}</HeaderLink>
-			{/*<HeaderLink link={`/${lang}/converter`}>{text.LinkConv}</HeaderLink>*/}
+			<HeaderLink link={`/${lang}/converter`}>{text.LinkConv}</HeaderLink>
 		</nav>
 	)
 }

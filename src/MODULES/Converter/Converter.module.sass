@@ -1,1 +1,21 @@
 .Wrapper
+  margin-top: 100px
+  width: 100%
+  display: grid
+  place-items: center
+  position: relative
+  &::before
+    content: ''
+    width: 0
+    transform-origin: center
+    height: 100%
+    position: absolute
+    border-bottom: 2px solid rgba(255,246,252,0.5)
+    animation: CreaateBottomBorder 1s
+    animation-fill-mode: forwards
+
+@keyframes CreaateBottomBorder
+  from
+    width: 0
+  to
+    width: 100%

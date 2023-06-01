@@ -16,7 +16,7 @@ const AppLayout: FC = () => {
 			<Toaster  position="top-right" reverseOrder={true}/>
 			<Background/>
 			<Cursor/>
-			<MainLayout>
+			<MainLayout center={location.pathname.split('/')[2] === 'calculator'}>
 				<Outlet/>
 			</MainLayout>
 		</div>

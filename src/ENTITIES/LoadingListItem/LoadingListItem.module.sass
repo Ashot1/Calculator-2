@@ -1,0 +1,48 @@
+.FavoriteItem
+  background: rgba(255, 255, 255, 0.1)
+  &:hover
+    box-shadow: 0 0 10px rgba(0,0,0,0.21)
+    transition: .4s
+
+.Course
+  display: flex
+  margin-top: 15px
+  & h1
+    margin: 0
+    padding: 0
+
+.NewData
+  margin-top: 1rem
+  margin-bottom: 1rem
+  line-height: 2.5rem
+  display: flex
+
+.pastData
+  line-height: 2.5rem
+  font-weight: 700
+  margin-top: 1rem
+  margin-bottom: 1rem
+  display: flex
+  & b
+    margin-left: 20px
+    margin-right: 10px
+    user-select: none
+    filter: invert(100%)
+    & img
+      width: 20px
+      height: 20px
+      margin-bottom: -3px
+      opacity: .5
+      @media (max-width: 500px)
+        margin-bottom: -5px
+
+.ValuteInfo
+  display: flex
+  gap: 25px
+  & h3
+    padding: 0
+    margin: 0 0 5px 0
+  & h6
+    padding: 0
+    margin: 0
+    position: absolute

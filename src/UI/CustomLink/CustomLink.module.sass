@@ -19,9 +19,11 @@
     border-bottom: 1px solid white
     transition: .4s
     transform: scaleX(0)
-
   &:hover
     transition: .4s
     &::before
       transform: scaleX(1)
-
+  @media (max-width: 500px)
+    font-size: 15px
+  @media (max-width: 300px)
+    font-size: 11px

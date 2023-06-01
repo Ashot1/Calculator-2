@@ -1,22 +1,31 @@
 import styles from './HistoryList.module.sass'
-import { CSSProperties, FC } from 'react'
+import { CSSProperties, FC, memo, MutableRefObject, useCallback, useMemo } from 'react'
 import HistoryUL from '../../ENTITIES/History/History'
 import ClearHistoryButton from '../../ENTITIES/ClearHistoryButton/ClearHistoryButton'
 import {motion} from 'framer-motion'
 import { IHistoryList } from '../../interfaces'
-import { Calculatortext } from '../../Localisation'
+import { CalculatorText } from '../../Localisation'
 
-const HistoryList: FC<IHistoryList> = ({History, setHistory, setValue, lang}) => {
-	const text = Calculatortext(lang)
+const HistoryList: FC<IHistoryList> = memo(({History, setHistory, setValue, lang}) => {
+	const text = useMemo(() => CalculatorText(lang), [lang])
+
 	return (
 		<motion.div exit={{opacity: 0}} className={styles.HistoryList}>
-			<section>
-				<h2 style={{"--width": lang === 'ru' ? '7.1ch' : '6.1ch'} as CSSProperties}>{text.History}</h2>
-			</section>
+			<Title lang={lang} text={text}/>
 			<HistoryUL Hist={History} onclick={setValue}/>
-			<ClearHistoryButton Clear={() => setHistory([])} text={text.ButtonClear}/>
+			<ClearHistoryButton Clear={useCallback(() => setHistory([]), [])} text={text.ButtonClear}/>
 		</motion.div>
 	)
-}
+})
 
 export default HistoryList
+
+
+const Title: FC<{lang: string, text: { History: string, ButtonClear: string}}> = memo(({lang, text}) => {
+
+	return(
+		<section>
+			<h2 style={{"--width": lang === 'ru' ? '7.1ch' : '6.1ch'} as CSSProperties}>{text.History}</h2>
+		</section>
+	)
+})

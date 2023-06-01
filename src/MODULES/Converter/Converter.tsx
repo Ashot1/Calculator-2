@@ -1,11 +1,14 @@
 import styles from './Converter.module.sass'
 import { FC } from 'react'
-import DropDownMenu from '../../UI/DropDownMenu/DropDownMenu'
+import ConverterValue from '../../WIDGETS/ConverterValue/ConverterValue'
+import { ValuteType } from '../../interfaces.ts'
+import ConvertValue from './convertValue.ts'
 
-const Converter: FC = () => {
+const Converter: FC<{Valute: ValuteType, lang: string}> = ({Valute, lang}) => {
+
 	return (
 		<div className={styles.Wrapper}>
-			<DropDownMenu/>
+			<ConverterValue Valute={Valute} lang={lang} ConvertValue={ConvertValue}/>
 		</div>
 	)
 }

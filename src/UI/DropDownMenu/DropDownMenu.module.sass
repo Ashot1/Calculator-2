@@ -2,7 +2,20 @@
   position: relative
 
 .CurrentValute
-  background: black
+  padding: 10px
+  border-radius: 10px
+  cursor: pointer
+  transition: .2s
+  p
+    margin: 0
+  &:hover
+    transition: .2s
+    background: rgba(255,255,255,0.15)
+
+.CurrentValueActive
+  background: rgba(255,255,255,0.15)
+  &:hover
+    background: rgba(255,255,255,0.10)
 
 .TopMenu
   display: flex
@@ -11,6 +24,7 @@
   & h1
     margin: 0
     padding: 0
+    text-transform: uppercase
     &::after
       content: ''
 
@@ -18,10 +32,44 @@
     color: rgba(255,246,252,0.63)
 
 .DropDown
-  background: coral
+  background: rgba(255,255,255,0.10)
+  backdrop-filter: blur(10px)
+  border-radius: 15px
   position: absolute
+  height: 300px
+  width: 100%
+  overflow-y: scroll
+  z-index: 2
+  overflow-x: hidden
+  margin-top: 10px
+  ul
+    list-style-type: none
+    padding: 0 0 0 10px
+    display: flex
+    gap: 8px
+    flex-direction: column
+    li
+      display: flex
+      align-items: center
+      width: 95%
+      padding: 5px
+      border-radius: 5px
+      cursor: pointer
+      word-wrap: break-word
+      transition: .2s
+      color: rgba(255,246,252,0.87)
+      &:hover
+        transition: .2s
+        color: white
+        background: rgba(255,255,255,0.1)
+  &::-webkit-scrollbar
+      background-color: rgba(255,255,255,0.09)
+      border-radius: 5px
 
-
+  &::-webkit-scrollbar-thumb
+    background: linear-gradient(90.4deg, rgb(248, 52, 246) 0.6%, rgb(152, 38, 252) 90%)
+    opacity: .3
+    border-radius: 10px
 
 .Arrow
   width: 25px

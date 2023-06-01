@@ -1,0 +1,9 @@
+.wrapper
+  display: flex
+  flex-direction: row
+  gap: 20px
+  width: clamp(300px, 80%, 800px)
+  @media (max-width: 940px)
+    flex-direction: column
+  @media (max-width: 320px)
+    width: 90%

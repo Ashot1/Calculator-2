@@ -5,7 +5,7 @@ import styles from './keyboard.module.sass'
 import { AddClickFunction } from './KeyboardLogic'
 import {motion} from 'framer-motion'
 
-const Keyboard: FC<IKeyboard> = memo(({ ops, onclick, Value, GetResult }) => {
+const Keyboard: FC<IKeyboard> = ({ ops, onclick, Value, GetResult }) => {
 
 	const buttons: string[][] = [
 		ops.slice(1, 5),
@@ -15,7 +15,6 @@ const Keyboard: FC<IKeyboard> = memo(({ ops, onclick, Value, GetResult }) => {
 		['00', '0', '='],
 		[ops[10], ops[0], ops[8], ops[9]]
 	]
-
 
 	return (
 		<motion.div exit={{opacity: 0}} className={styles.Keyboard}>
@@ -29,6 +28,6 @@ const Keyboard: FC<IKeyboard> = memo(({ ops, onclick, Value, GetResult }) => {
 			)}
 		</motion.div>
 	)
-})
+}
 
 export default Keyboard

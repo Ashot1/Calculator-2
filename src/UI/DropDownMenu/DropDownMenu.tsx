@@ -1,24 +1,37 @@
 import styles from './DropDownMenu.module.sass'
-import { FC } from 'react'
+import { FC, Suspense } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { Await } from 'react-router-dom'
+import LoadingElement from '../LoadingElement/LoadingElement'
+import { IDropDown } from '../../interfaces'
 
-const DropDownMenu: FC = () => {
+
+const DropDownMenu: FC<IDropDown> = ({h, fullname, SuspensePromise, isOpen, setIsOpen, list}) => {
+
 	return (
 		<div className={styles.Wrapper}>
-			<div className={styles.CurrentValute}>
+			<div className={`${styles.CurrentValute} ${isOpen ? styles.CurrentValueActive : ''}`} onClick={setIsOpen}>
 				<div className={styles.TopMenu}>
-					<h1>RUB</h1>
-					<span className={styles.Arrow}></span>
+					<Suspense fallback={<LoadingElement text='RUB' />}>
+						<Await resolve={SuspensePromise}>
+							<h1>{h}</h1>
+						</Await>
+					</Suspense>
+					<motion.span animate={{rotate: isOpen ? 0 : 180}} className={styles.Arrow}></motion.span>
 				</div>
-				<p>Российский рубль</p>
+				<Suspense fallback={<LoadingElement text="Российский рубль"/>}>
+					<Await resolve={SuspensePromise}>
+						<p>{fullname}</p>
+					</Await>
+				</Suspense>
 			</div>
-			<div className={styles.DropDown}>
-				<ul>
-					<li><span>RUB</span> <p>Российский рубль</p></li>
-					<li><span>RUB</span> <p>Российский рубль</p></li>
-					<li><span>RUB</span> <p>Российский рубль</p></li>
-					<li><span>RUB</span> <p>Российский рубль</p></li>
-				</ul>
-			</div>
+			<AnimatePresence>
+				{isOpen && <motion.div initial={{opacity: 0, translateY: -15}} animate={{ opacity: 1, translateY: 0 }} exit={{opacity: 0, translateY: -10}} className={styles.DropDown}>
+					<ul>
+						{list}
+					</ul>
+				</motion.div>}
+			</AnimatePresence>
 		</div>
 	)
 }

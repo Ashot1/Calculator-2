@@ -7,12 +7,14 @@ import { useParams } from 'react-router-dom'
 const Header: FC = () => {
 	const params = useParams()
 
-	if(params.lang === undefined) return <h2>Ошибка</h2>
+	let lang = params.lang
+
+	if(lang === undefined) lang = navigator.language
 
 	return (
 		<header className={styles.header}>
 			<section className={styles.content}>
-				<HeaderLinks lang={params.lang}/>
+				<HeaderLinks lang={lang}/>
 				<HeaderParameters/>
 			</section>
 		</header>

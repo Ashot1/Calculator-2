@@ -1,0 +1,23 @@
+@import 'https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap'
+
+.FavoriteWrap
+  width: 100%
+
+.NamePosition
+  width: 100%
+  display: grid
+  place-items: center
+  font-family: 'Fira Sans', sans-serif
+  margin-top: 50px
+  margin-bottom: 20px
+  & h1
+    width: 0
+    animation: TextWriteAnim2 1s steps(8)
+    animation-fill-mode: forwards
+    overflow: hidden
+
+@keyframes TextWriteAnim2
+  from
+    width: 0
+  to
+    width: var(--FZ)

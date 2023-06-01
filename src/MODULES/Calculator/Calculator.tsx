@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect, useMemo, useState } from 'react'
 import styles from './calculator.module.sass'
 import CalculatorDisplay from '../../WIDGETS/CalculatorDisplay/CalculatorDisplay'
 import Keyboard from '../../WIDGETS/Keyboard/Keyboard'
@@ -13,7 +13,7 @@ const Calculator: FC = () => {
 		[Result, setResult] = useState<string>('0'),
 		[History, setHistory] = useState<string[]>([]),
 		[OpenedHistory, setOpenedHistory] = useState<boolean>(false),
-		ops: string[] = ['^', 'C', '×', '÷', '⌫', '-', '+', '.', '(', ')', '√'],
+		ops = useMemo(() => ['^', 'C', '×', '÷', '⌫', '-', '+', '.', '(', ')', '√'], []),
 		[matchQuery, setmatchQuery] = useState<boolean>(window.matchMedia("(max-width: 768px)").matches),
 		params = useParams();
 
