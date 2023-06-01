@@ -55,6 +55,6 @@ export const manifestForPlugin: Partial<VitePWAOptions> = {
 		'start_url': './',
 		'display': 'standalone',
 		'theme_color': '#4F1975',
-		'background_color': '#4a00e0'
+		'background_color': '#fff'
 	}
 }

@@ -20,6 +20,9 @@ const ConverterBasicList: FC<{lang: string, Valute: ValuteType, setFavList: (arg
 			<ConverterList>
 				<BasicListContent Valute={Valute} lang={lang} setFavList={setFavList} FavList={FavList} search={SearchInput}/>
 			</ConverterList>
+			<span className={styles.info}>
+				<a href="https://www.cbr-xml-daily.ru/">API для курсов ЦБ РФ</a>
+			</span>
 		</div>
 	)
 }

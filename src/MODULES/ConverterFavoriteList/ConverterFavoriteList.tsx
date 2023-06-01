@@ -16,7 +16,7 @@ const ConverterFavoriteList: FC<{lang: string, Valute: ValuteType, setFavList: (
 
 	return (
 		<div className={styles.FavoriteWrap}>
-			<Name fz={lang === 'ru' ? 9.5 : 7.5}>{ConverterBasicListText(lang).Favorite}</Name>
+			<Name fz={lang === 'ru' ? 165 : 130}>{ConverterBasicListText(lang).Favorite}</Name>
 			<ConverterList>
 				<FavoriteListContent setFavList={setFavList} Valute={Valute} lang={lang} FavList={FavList}/>
 			</ConverterList>
@@ -29,7 +29,7 @@ export default ConverterFavoriteList
 
 const Name: FC<{children: string, fz: number}> = memo(function Name({children, fz}){
 	return (
-		<div className={styles.NamePosition} style={{'--FZ': `${fz}ch`} as CustomCSS}>
+		<div className={styles.NamePosition} style={{'--FZ': `${fz}px`} as CustomCSS}>
 			<h1>{children}</h1>
 		</div>
 	)

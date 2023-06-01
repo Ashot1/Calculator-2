@@ -8,6 +8,8 @@ const MobileProvider: FC<{children: ReactNode}> = memo(function MobileProvider({
 
 	const Width768 = window.matchMedia('(max-width: 768px)').matches
 
+
+
 	return (
 		<MobileContext.Provider value={{ TouchDisplay: TouchDisplay, Width768: Width768 }}>
 			{children}
