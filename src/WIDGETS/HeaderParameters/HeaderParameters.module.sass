@@ -10,9 +10,22 @@
   text-transform: uppercase
   @media (max-width: 500px)
     font-size: 15px
+  @media (max-width: 350px)
+    font-size: 11px
 
 .CursorChange
   display: flex
   padding-left: 10px
-  @media (max-width: 768px)
+  @media (max-width: 500px)
     display: none
+
+.reloadBTN
+  display: none
+  @media (max-width: 768px)
+    display: flex
+  .realodIMG
+    width: 15px
+    filter: invert(100%)
+    @media (max-width: 350px)
+      width: 13px
+      height: 14px

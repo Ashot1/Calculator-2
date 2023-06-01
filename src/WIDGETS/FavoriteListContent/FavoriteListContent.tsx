@@ -23,8 +23,8 @@ const FavoriteListContent: FC<{Valute: ValuteType, setFavList: (arg: string) => 
 									key={`${item.CharCode}Favorite`}
 									FullTitle={ConverterText(lang)[item.CharCode]}
 									title={item.CharCode}
-									newCourse={item.Value}
-									oldCourse={item.Previous} percent={percent}
+									newCourse={item.Value / item.Nominal}
+									oldCourse={item.Previous / item.Nominal} percent={percent}
 									click={() => {
 										setFavList(`${ClickFilter.join(',')}`)
 										localStorage.setItem('ConverterList', `${ClickFilter.join(',')}`)

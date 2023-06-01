@@ -32,8 +32,8 @@ const BasicListContent: FC<{Valute: ValuteType, lang: string, setFavList: (arg: 
 									key={`${item.CharCode}Favorite`}
 									FullTitle={ConverterText(lang)[item.CharCode]}
 									title={item.CharCode}
-									newCourse={item.Value}
-									oldCourse={item.Previous} percent={percent}
+									newCourse={item.Value / item.Nominal}
+									oldCourse={item.Previous / item.Nominal} percent={percent}
 									click={() => {
 										if(!ClickFilter.includes(item.CharCode)) {
 											setFavList(`${ClickFilter.join(',')},${item.CharCode}`)
