@@ -2,22 +2,31 @@
 
 .FavoriteWrap
   width: 100%
+  background: rgba( 245, 160, 255, 0.05 )
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )
+  backdrop-filter: blur( 0px )
+  -webkit-backdrop-filter: blur( 0px )
+  border-radius: 20px
+  border: 1px solid rgba( 255, 255, 255, 0.18 )
+  margin-top: 100px
+  padding-top: 25px
 
 .NamePosition
   width: 100%
   display: grid
   place-items: center
   font-family: 'Fira Sans', sans-serif
-  margin-top: 50px
   margin-bottom: 20px
   & h1
     width: 0
-    animation: TextWriteAnim2 1s steps(8)
+    animation: TextWriteAnim2 2s steps(12)
+    letter-spacing: 3px
     animation-fill-mode: forwards
     overflow: hidden
+    text-align: center
 
 @keyframes TextWriteAnim2
   from
     width: 0
   to
-    width: var(--FZ)
+    width: 15ch

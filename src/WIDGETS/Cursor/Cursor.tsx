@@ -1,7 +1,7 @@
 import { FC, useContext, useEffect, useState } from 'react'
 import CursorAppearance from '../../UI/CursorAppearance/CursorAppearance'
 import styles from './Cursor.module.sass'
-import { MobileContext } from '../../PROVIDERS/MobileContext.tsx'
+import { MobileContext } from '../../CONTEXTS/MobileContext.tsx'
 
 const Cursor: FC = () => {
 	const [Pos, setPos] = useState<number[]>([]),

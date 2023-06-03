@@ -1,9 +1,11 @@
 .header
-  width: 100%
+  width: calc(100% - 15px)
   height: 50px
   position: absolute
   display: grid
   place-items: center
+  z-index: 10
+  backdrop-filter: blur(5px)
 
 .content
   height: 100%
@@ -12,5 +14,5 @@
   justify-content: space-between
   @media (max-width: 500px)
     width: 90%
-    margin-top: 10px
+    padding-top: 10px
 
