@@ -69,9 +69,10 @@ export interface ICursor{
 	y1: number,
 	x2: number,
 	y2: number,
-	Display: string,
+	Display?: string,
 	Position: string,
-	DopClass?: string
+	DopClass1?: string,
+	DopClass2?: string,
 }
 
 export type LocalisationConverterType = { [key: string]: string }

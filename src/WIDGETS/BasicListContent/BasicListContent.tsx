@@ -21,7 +21,7 @@ const BasicListContent: FC<{Valute: ValuteType, lang: string, setFavList: (arg: 
 			<Await resolve={Valute}>
 				{(Valutes: ValuteType[]) => {
 					return Object.values(Valutes)
-						.filter(item => item.CharCode.concat(ConverterText(lang)[item.CharCode]).toLowerCase().includes(Search.toLowerCase()))
+						.filter(item => item.CharCode.concat(ConverterText(lang)[item.CharCode] || item.Name).toLowerCase().includes(Search.toLowerCase()))
 						.map(item => {
 								const New= (item.Value / item.Nominal)
 								const Old= (item.Previous / item.Nominal)
@@ -30,7 +30,7 @@ const BasicListContent: FC<{Valute: ValuteType, lang: string, setFavList: (arg: 
 								const ClickFilter= FavList.split(',')
 								return <ConverterListItem
 									key={`${item.CharCode}Favorite`}
-									FullTitle={ConverterText(lang)[item.CharCode]}
+									FullTitle={ConverterText(lang)[item.CharCode] || item.Name}
 									title={item.CharCode}
 									newCourse={item.Value / item.Nominal}
 									oldCourse={item.Previous / item.Nominal} percent={percent}

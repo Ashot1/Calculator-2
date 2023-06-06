@@ -21,7 +21,12 @@ const Cursor: FC = () => {
 				const x: number = e.clientX,
 					y: number = e.clientY
 				setPos([x, y])
-				if(e.target && (e.target as HTMLElement).closest('button')){
+
+				const ClosestCondition = (e.target as HTMLElement).closest('button')
+					|| (e.target as HTMLElement).closest('li')
+					|| (e.target as HTMLElement).closest('input')
+
+				if(e.target && ClosestCondition){
 					setDopClass(styles.active)
 				} else {
 					setDopClass('')
@@ -31,10 +36,10 @@ const Cursor: FC = () => {
 		document.addEventListener('mousemove', MouseMove)
 
 		return () => document.removeEventListener('mousemove', MouseMove)
-	}, [])
+	}, [TouchDisplay])
 
 	return (
-		<CursorAppearance x1={Pos[0]} y1={Pos[1]} x2={Pos[0]} y2={Pos[1]} Display={!TouchDisplay && Cursor === "dot" ? 'block' : 'none' } Position="absolute" DopClass={DopClass}/>
+		<CursorAppearance x1={Pos[0]} y1={Pos[1]} x2={Pos[0]} y2={Pos[1]} Position="absolute" DopClass1={`${DopClass} ${styles.AnotherClass1}`} DopClass2={styles.AnotherClass2}/>
 	)
 }
 
