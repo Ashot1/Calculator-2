@@ -35,7 +35,7 @@ const App: FC = () => {
     const cursor: null | string = localStorage.getItem("cursor")
 
     useEffect(() => {
-        const FavoriteList: string | null = localStorage.getItem("ConverterList")
+        const FavoriteList = localStorage.getItem("ConverterList")
         if(!FavoriteList){
             localStorage.setItem("ConverterList", 'USD,EUR')
             window.location.reload()
