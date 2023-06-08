@@ -5,12 +5,12 @@ import Header from '../../MODULES/Header/Header'
 import { Toaster } from 'react-hot-toast'
 import Cursor from '../../WIDGETS/Cursor/Cursor'
 import MainLayout from '../MainLayout/MainLayout'
-import { Outlet, useLocation, Navigate } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 
 const AppLayout: FC = () => {
-	const location = useLocation()
-	if(location.pathname === '/') return <Navigate replace to={`/${window.navigator.language}/calculator`} />
-
+	// const location = useLocation()
+	// if(location.pathname === '/') return <Navigate replace to={`/${window.navigator.language}/calculator`} />
+	//
 	return (
 		<div className={styles.App}>
 			<Header/>
