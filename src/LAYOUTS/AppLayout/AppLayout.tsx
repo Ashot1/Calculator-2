@@ -8,9 +8,6 @@ import MainLayout from '../MainLayout/MainLayout'
 import { Outlet } from "react-router-dom"
 
 const AppLayout: FC = () => {
-	// const location = useLocation()
-	// if(location.pathname === '/') return <Navigate replace to={`/${window.navigator.language}/calculator`} />
-	//
 	return (
 		<div className={styles.App}>
 			<Header/>
