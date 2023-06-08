@@ -10,13 +10,14 @@ import { Outlet, useLocation, Navigate } from "react-router-dom"
 const AppLayout: FC = () => {
 	const location = useLocation()
 	if(location.pathname === '/') return <Navigate replace to={`/${window.navigator.language}/calculator`} />
+
 	return (
 		<div className={styles.App}>
 			<Header/>
 			<Toaster  position="top-right" reverseOrder={true}/>
 			<Background/>
 			<Cursor/>
-			<MainLayout center={location.pathname.split('/')[2] === 'calculator'}>
+			<MainLayout center={location.pathname.split('/')[2] === 'calculator' || location.pathname.split('/')[2] === 'NotFound'}>
 				<Outlet/>
 			</MainLayout>
 		</div>

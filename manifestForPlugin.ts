@@ -52,7 +52,7 @@ export const manifestForPlugin: Partial<VitePWAOptions> = {
 			}
 		],
 		'scope': './',
-		'start_url': './',
+		'start_url': `https://calculator-2-theta.vercel.app/${window.navigator.language}/calculator`,
 		'display': 'standalone',
 		'theme_color': '#4F1975',
 		'background_color': '#fff'
