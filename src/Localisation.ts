@@ -26,10 +26,6 @@ export const CalculatorText:  (lang: string) => { History: string, ButtonClear: 
 	}
 }
 
-export const NotFoundedText: (lang: string) => string = (lang) => {
-	if(lang === "ru") return "Страница не найдена"
-	return "Page not found"
-}
 
 export const ConverterText = (lang: string): LocalisationConverterType => {
 	if(lang === 'ru') return {

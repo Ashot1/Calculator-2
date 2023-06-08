@@ -23,7 +23,7 @@ const router = createBrowserRouter([
                   errorElement: <ErrorPage/>
             },
             {
-                path: ":lang/*",
+                path: "*",
                 element: <NotFoundedPage/>
             }
         ]
