@@ -5,9 +5,11 @@ import Header from '../../MODULES/Header/Header'
 import { Toaster } from 'react-hot-toast'
 import Cursor from '../../WIDGETS/Cursor/Cursor'
 import MainLayout from '../MainLayout/MainLayout'
-import { Outlet } from "react-router-dom"
+import { Outlet, useLocation } from 'react-router-dom'
 
 const AppLayout: FC = () => {
+	const location = useLocation()
+
 	return (
 		<div className={styles.App}>
 			<Header/>
