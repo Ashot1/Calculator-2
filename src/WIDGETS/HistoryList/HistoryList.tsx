@@ -1,5 +1,5 @@
 import styles from './HistoryList.module.sass'
-import { CSSProperties, FC, memo, useCallback, useMemo } from 'react'
+import { FC, memo, useCallback, useMemo } from 'react'
 import HistoryUL from '../../ENTITIES/History/History'
 import ClearHistoryButton from '../../ENTITIES/ClearHistoryButton/ClearHistoryButton'
 import {motion} from 'framer-motion'
@@ -25,7 +25,7 @@ const Title: FC<{lang: string, text: { History: string, ButtonClear: string}}> =
 
 	return(
 		<section>
-			<h2 style={{"--width": lang === 'ru' ? '7.1ch' : '6.1ch'} as CSSProperties}>{text.History}</h2>
+			<h2>{text.History}</h2>
 		</section>
 	)
 })
