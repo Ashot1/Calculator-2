@@ -11,7 +11,7 @@ const HistoryList: FC<IHistoryList> = memo(({History, setHistory, setValue, lang
 
 	return (
 		<motion.div exit={{opacity: 0}} className={styles.HistoryList}>
-			<Title lang={lang} text={text}/>
+			<Title text={text}/>
 			<HistoryUL Hist={History} onclick={setValue}/>
 			<ClearHistoryButton Clear={useCallback(() => setHistory([]), [])} text={text.ButtonClear}/>
 		</motion.div>
@@ -21,7 +21,7 @@ const HistoryList: FC<IHistoryList> = memo(({History, setHistory, setValue, lang
 export default HistoryList
 
 
-const Title: FC<{lang: string, text: { History: string, ButtonClear: string}}> = memo(({lang, text}) => {
+const Title: FC<{text: { History: string, ButtonClear: string}}> = memo(({text}) => {
 
 	return(
 		<section>
