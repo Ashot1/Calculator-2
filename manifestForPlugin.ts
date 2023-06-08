@@ -51,7 +51,7 @@ export const manifestForPlugin: Partial<VitePWAOptions> = {
 				'type': 'image/png',
 			}
 		],
-		'scope': './',
+		'scope': '/',
 		'start_url': './',
 		'display': 'standalone',
 		'theme_color': '#4F1975',
