@@ -6,6 +6,9 @@ export const manifestForPlugin: Partial<VitePWAOptions> = {
 	devOptions: {
 		enabled: false
 	},
+	workbox: {
+		globPatterns: ["**/*"],
+	},
 	manifest: {
 		'short_name': 'V-Calculator',
 		'name': 'Vietnam Calculator 2',
@@ -52,7 +55,7 @@ export const manifestForPlugin: Partial<VitePWAOptions> = {
 			}
 		],
 		'scope': '/',
-		'start_url': './',
+		'start_url': '/',
 		'display': 'standalone',
 		'theme_color': '#4F1975',
 		'background_color': '#fff'
