@@ -12,7 +12,7 @@ const HeaderParameters: FC = () => {
 		navigate = useNavigate(),
 		location = useLocation(),
 		path: string[] = location.pathname.split('/'),
-		anotherLanguage: string = path[1] === 'ru' ? 'en' : 'ru',
+		anotherLanguage: string = path[1].includes('ru') ? 'en' : 'ru',
 		text = HeaderText(path[1])
 
 	return (
